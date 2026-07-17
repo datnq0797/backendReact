@@ -3,6 +3,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\BrandController;
 
 Route::post('/admin/login', [AuthController::class, 'authenticate']);
 
@@ -18,5 +19,5 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     // Route::delete('categories/{id}', [CategoryController::class, 'destroy']);
 
     Route::resource('categories', CategoryController::class);
-    Route::resource('brands', CategoryController::class);
+    Route::resource('brands', BrandController::class);
 });
